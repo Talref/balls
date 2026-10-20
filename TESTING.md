@@ -1,24 +1,14 @@
-# BALLS — Verification protocol
+# BALLS — Verification
 
-## Before starting
-- Read the issue acceptance criteria.
-- Verify the intended Godot project and scene via Godot MCP, not by guessing.
-- Do not modify the host to repair MCP availability.
+Before editing, read the active issue and confirm the Godot project is `/home/eradan/s/balls`.
 
-## During implementation
-- Use the smallest meaningful test after each subsystem.
-- Validate scene paths, node names, resources, input actions, and scripts.
-- Inspect Godot errors after changes. Report exact errors and fixes.
-- Avoid unbounded retries. After two identical failures, stop and report the blocker.
+Use Godot MCP and permitted shell **diagnostics** to check scenes, scripts, input mappings, and runtime errors. You may run project-scoped tests through the tools available to you. Do not change or terminate host processes when diagnosing failures. Retry intelligently instead of looping.
 
-## Minimum acceptance for issue #1
-- The project opens in Godot and the main scene starts without errors.
-- The player spawns without intersection, moves on terrain, accelerates downhill, loses speed climbing, jumps, steers with reduced air control, and resets.
-- The camera follows smoothly and the HUD shows horizontal speed.
-- Tests and observed results are documented; failures and untested cases remain explicit.
+## Issue #1 minimum checks
+- Godot opens the main scene without script/runtime errors.
+- The ball spawns correctly, moves downhill, steers, jumps, and resets.
+- Follow camera and horizontal-speed HUD work.
+- Record which checks were actually run and what they showed.
 
 ## Delivery
-- Work in a feature branch.
-- Report changed files, controls, verification performed, outstanding errors, and known limitations.
-- A human must assess whether movement feels fun, fast, and controllable.
-- Keep the GitHub issue open until accepted by the human.
+Summarize files changed, controls, verification performed, errors, limitations, and unresolved blockers. Human playtesting decides whether movement feels fun, fast, and controllable. Leave the issue open until the human accepts the result.
