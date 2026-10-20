@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://bt4s2r26lghj8"]
+
+[ext_resource type="Shape3D" path="res://shapes/box_20x0p5x12.tres" id="1_r5tyk"]
+[ext_resource type="BoxMesh" path="res://meshes/box_20x0p5x12.tres" id="2_2d2mb"]
+[ext_resource type="Shape3D" path="res://shapes/box_20x0p5x6p71.tres" id="5_hc7ve"]
+[ext_resource type="BoxMesh" path="res://meshes/box_20x0p5x6p71.tres" id="6_vvfch"]
+[ext_resource type="Shape3D" path="res://shapes/box_20x0p5x18.tres" id="7_yc6dp"]
+[ext_resource type="BoxMesh" path="res://meshes/box_20x0p5x18.tres" id="8_ritfc"]
+[ext_resource type="Shape3D" path="res://shapes/box_20x0p5x100.tres" id="9_y7qgn"]
+[ext_resource type="BoxMesh" path="res://meshes/box_20x0p5x100.tres" id="10_f4qvn"]
+[ext_resource type="Script" uid="uid://buk06d3y1gkgq" path="res://scripts/player.gd" id="11_qjjs2"]
+[ext_resource type="Shape3D" path="res://shapes/sphere_player.tres" id="12_4gx1y"]
+[ext_resource type="SphereMesh" path="res://meshes/sphere_player.tres" id="13_ubo0v"]
+[ext_resource type="Script" uid="uid://dqgtbikg3ff31" path="res://scripts/camera_rig.gd" id="14_g7mfh"]
+[ext_resource type="Environment" uid="uid://b0k3wa6vgsmc6" path="res://env.tres" id="14_r0eph"]
+[ext_resource type="Script" uid="uid://t6vrvt6wu8io" path="res://scripts/hud.gd" id="15_8b5lh"]
+[ext_resource type="BoxMesh" path="res://meshes/box_20x0p5x6p093.tres" id="t1_mesh"]
+[ext_resource type="Shape3D" path="res://shapes/box_20x0p5x6p093.tres" id="t1_shape"]
+[ext_resource type="BoxMesh" path="res://meshes/box_20x0p5x6p212.tres" id="t2_mesh"]
+[ext_resource type="Shape3D" path="res://shapes/box_20x0p5x6p212.tres" id="t2_shape"]
+[ext_resource type="BoxMesh" path="res://meshes/box_20x0p5x6p385.tres" id="t3_mesh"]
+[ext_resource type="Shape3D" path="res://shapes/box_20x0p5x6p385.tres" id="t3_shape"]
+[ext_resource type="BoxMesh" path="res://meshes/box_20x0p5x6p620.tres" id="t4_mesh"]
+[ext_resource type="Shape3D" path="res://shapes/box_20x0p5x6p620.tres" id="t4_shape"]
+[ext_resource type="BoxMesh" path="res://meshes/box_20x0p5x6p928.tres" id="t5_mesh"]
+[ext_resource type="Shape3D" path="res://shapes/box_20x0p5x6p928.tres" id="t5_shape"]
+
+[node name="sandbox" type="Node3D" unique_id=113547713]
+
+[node name="World" type="Node3D" parent="." unique_id=904234447]
+
+[node name="StartPlatform" type="StaticBody3D" parent="World" unique_id=1631765683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.75, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="World/StartPlatform" unique_id=1161070736]
+shape = ExtResource("1_r5tyk")
+
+[node name="Mesh" type="MeshInstance3D" parent="World/StartPlatform" unique_id=771623652]
+mesh = ExtResource("2_2d2mb")
+
+[node name="T1" type="StaticBody3D" parent="World" unique_id=395650153]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, -0.17364818, 0, 0.17364818, 0.9848077, 0, 19.224817, 8.956588)
+
+[node name="Collision" type="CollisionShape3D" parent="World/T1" unique_id=1737429734]
+shape = ExtResource("t1_shape")
+
+[node name="Mesh" type="MeshInstance3D" parent="World/T1" unique_id=1142087269]
+mesh = ExtResource("t1_mesh")
+
+[node name="T2" type="StaticBody3D" parent="World" unique_id=1199271346]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 0, 17.89671, 14.935295)
+
+[node name="Collision" type="CollisionShape3D" parent="World/T2" unique_id=875865978]
+shape = ExtResource("t2_shape")
+
+[node name="Mesh" type="MeshInstance3D" parent="World/T2" unique_id=2096803958]
+mesh = ExtResource("t2_mesh")
+
+[node name="T3" type="StaticBody3D" parent="World" unique_id=180981473]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, -0.34202015, 0, 0.34202015, 0.9396926, 0, 16.00751, 20.914495)
+
+[node name="Collision" type="CollisionShape3D" parent="World/T3" unique_id=1977528977]
+shape = ExtResource("t3_shape")
+
+[node name="Mesh" type="MeshInstance3D" parent="World/T3" unique_id=848357937]
+mesh = ExtResource("t3_mesh")
+
+[node name="T4" type="StaticBody3D" parent="World" unique_id=909179161]
+transform = Transform3D(1, 0, 0, 0, 0.9063078, -0.42261827, 0, 0.42261827, 0.9063078, 0, 13.525022, 26.894344)
+
+[node name="Collision" type="CollisionShape3D" parent="World/T4" unique_id=1581109111]
+shape = ExtResource("t4_shape")
+
+[node name="Mesh" type="MeshInstance3D" parent="World/T4" unique_id=1593811771]
+mesh = ExtResource("t4_mesh")
+
+[node name="T5" type="StaticBody3D" parent="World" unique_id=212484212]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 10.404119, 32.875)
+
+[node name="Collision" type="CollisionShape3D" parent="World/T5" unique_id=1017642329]
+shape = ExtResource("t5_shape")
+
+[node name="Mesh" type="MeshInstance3D" parent="World/T5" unique_id=1512499029]
+mesh = ExtResource("t5_mesh")
+
+[node name="MidFlat" type="StaticBody3D" parent="World" unique_id=1364188244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 46)
+
+[node name="Collision" type="CollisionShape3D" parent="World/MidFlat" unique_id=2076529371]
+shape = ExtResource("1_r5tyk")
+
+[node name="Mesh" type="MeshInstance3D" parent="World/MidFlat" unique_id=1662765403]
+mesh = ExtResource("2_2d2mb")
+
+[node name="JumpRamp" type="StaticBody3D" parent="World" unique_id=395578018]
+transform = Transform3D(1, 0, 0, 0, 0.8944272, 0.4472136, 0, -0.4472136, 0.8944272, 0, 4.27639, 55.1118)
+
+[node name="Collision" type="CollisionShape3D" parent="World/JumpRamp" unique_id=1818400]
+shape = ExtResource("5_hc7ve")
+
+[node name="Mesh" type="MeshInstance3D" parent="World/JumpRamp" unique_id=1703996201]
+mesh = ExtResource("6_vvfch")
+
+[node name="FinishArea" type="StaticBody3D" parent="World" unique_id=1811689741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 71)
+
+[node name="Collision" type="CollisionShape3D" parent="World/FinishArea" unique_id=525986955]
+shape = ExtResource("7_yc6dp")
+
+[node name="Mesh" type="MeshInstance3D" parent="World/FinishArea" unique_id=555101222]
+mesh = ExtResource("8_ritfc")
+
+[node name="VoidFloor" type="StaticBody3D" parent="World" unique_id=1451329792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.25, 40)
+
+[node name="Collision" type="CollisionShape3D" parent="World/VoidFloor" unique_id=1156890023]
+shape = ExtResource("9_y7qgn")
+
+[node name="Mesh" type="MeshInstance3D" parent="World/VoidFloor" unique_id=810064001]
+mesh = ExtResource("10_f4qvn")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=220899210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21, 0)
+script = ExtResource("11_qjjs2")
+camera_path = NodePath("CameraRig/Camera3D")
+
+[node name="Collision" type="CollisionShape3D" parent="Player" unique_id=1096675856]
+shape = ExtResource("12_4gx1y")
+
+[node name="Visual" type="MeshInstance3D" parent="Player" unique_id=1948558592]
+mesh = ExtResource("13_ubo0v")
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=517316058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23, -8)
+script = ExtResource("14_g7mfh")
+player_path = NodePath("../Player")
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=931661302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -6)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1724930908]
+script = ExtResource("15_8b5lh")
+player_path = NodePath("../Player")
+
+[node name="SpeedLabel" type="Label" parent="HUD" unique_id=777443569]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 320.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 24
+text = "SPEED   0.0 m/s"
+
+[node name="HintLabel" type="Label" parent="HUD" unique_id=917601728]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -48.0
+offset_right = 260.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 18
+text = "WASD / arrows — steer      SPACE — jump      R — reset"
+horizontal_alignment = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=493837048]
+environment = ExtResource("14_r0eph")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=988145082]
+transform = Transform3D(0.8660254, 0.3830222, -0.32139382, 0, 0.64278764, 0.7660444, 0.5, -0.6634139, 0.5566704, 0, 0, 0)
