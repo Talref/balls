@@ -1,7 +1,8 @@
 # PROGRESS — Milestone 001 development checkpoint
 
 Branch: `feat/milestone-001-movement-sandbox` (from `main`) · Date: 2026-10-20
-Status: implementation complete, live MCP verification in progress; not yet committed.
+Status: **complete** — all tests A–E pass, final code headless-clean, committed and pushed;
+PR #3 open with `Closes #1`; issue left open for human playtest acceptance.
 
 ## Implemented features
 
@@ -72,6 +73,9 @@ actions defined in `project.godot`, sandbox scene registered as main scene.
   not a bug (no win/lose state yet).
 - **Test D — HUD: PASS.** SpeedLabel updates live while moving: 0.0 → 15.1 → 27.8 → 32.0 m/s
   (reaches the `max_horizontal_speed` cap, confirming the cap works).
+- **Test E — reset: PASS.** With the ball mid-fall past the course end (y ≈ -49.7M), holding
+  `reset` teleported it to exactly `(0, 21, 0)` with zero velocity and held it there; after
+  release normal physics resumed and it settled back to y ≈ 20.5007.
 - **Headless validation:** `godot --headless --path . res://scenes/sandbox.tscn --quit` loads
   clean; `--check-only --script` parse checks pass for all three scripts.
 
@@ -90,13 +94,17 @@ actions defined in `project.godot`, sandbox scene registered as main scene.
    beyond the course end; acceptable sandbox behavior for this milestone.
 5. **Feel untested** — movement has not been human-played; no claim that it "feels good".
 
-## Remaining acceptance criteria (GitHub issue #1)
+## Acceptance criteria (GitHub issue #1)
 
-- [ ] Test E — reset: hold `reset` via MCP input simulation, verify teleport to spawn
-      `(0, 21, 0)` with zero velocity.
-- [ ] Remove TEMP debug marker (`print("BALLS_PLAYER_V2")`) from `player.gd`.
-- [ ] Delete orphaned resources `shapes/box_20x0p5x22p36.tres` +
-      `meshes/box_20x0p5x22p36.tres` (grep-confirm no references first).
-- [ ] Final headless `run_and_capture` of the committed code — expect zero errors.
-- [ ] Commit scaffolding, then sandbox implementation; push branch; open PR with
-      `Closes #1`. Leave issue open for human playtest acceptance.
+All agent-side work is done:
+
+- [x] Test E — reset verified via MCP input simulation (see results above).
+- [x] TEMP debug marker removed from `player.gd`.
+- [x] Orphaned resources deleted (`shapes/box_20x0p5x22p36.tres`,
+      `meshes/box_20x0p5x22p36.tres`; grep confirmed no references).
+- [x] Final headless `run_and_capture` of the committed code — zero errors / zero warnings.
+- [x] Committed (scaffolding + sandbox implementation), branch pushed, PR #3 opened with
+      `Closes #1`.
+
+Remaining: **human playtest acceptance** — issue intentionally left open until a human plays
+the build and confirms feel/controls.
